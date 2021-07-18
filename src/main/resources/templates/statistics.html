@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/menu.html}">
+
+
+
+<head>
+    <title>index</title>
+</head>
+<body>
+
+
+
+<div layout:fragment="mainContent">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <div class="col-9 offset-1 text-white" >
+
+        <div th:each=" t : ${test} ">
+            <p> Név:  <span th:text="${t.name}" > </span> </p>
+            <p>Pont:  <span th:text="${t.score}" > </span> </p>
+            <p>tipp: <span th:text="${t.tipp}" > </span> </p>
+            <p>dátum: <span th:text="${t.dates}" > </span> </p>
+            <br>
+            <br>
+        </div>
+
+    </div>
+
+
+
+   <!--
+
+
+    -->
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

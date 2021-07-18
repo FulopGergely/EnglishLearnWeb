@@ -1,0 +1,107 @@
+
+
+//1 teszt alatt kinek lett a legtöbb pontja
+
+create or replace FUNCTION func RETURN NUMBER AS 
+    darab NUMBER;
+    a test%ROWTYPE;
+    CURSOR kurzor IS SELECT * INTO a FROM test;
+    num integer;
+    nam varchar2(20); 
+BEGIN
+    OPEN kurzor;
+    num := 0;
+    LOOP
+        FETCH kurzor INTO a;
+        EXIT WHEN kurzor%NOTFOUND;
+
+         IF num < a.score then
+            num := a.score;
+            nam := a.NAME;
+        end if;
+
+    END LOOP;
+    DBMS_OUTPUT.PUT_LINE(nam ||' '||  num); 
+    RETURN num;
+END;
+
+
+
+
+
+
+// hányan töltik ki a tesztet
+
+create or replace TRIGGER TRIGGER2
+BEFORE INSERT ON Test
+BEGIN
+   UPDATE rank SET summ = summ + 1;
+END;
+
+
+
+
+
+
+
+
+//a kérdés első betüjét nagy betüre állítja
+
+create or replace TRIGGER UP_FIRST_CHAR
+BEFORE INSERT ON english
+FOR EACH ROW
+BEGIN
+   UPDATE english SET question = INITCAP(question);
+END;
+
+
+
+
+
+
+
+
+
+CREATE TABLE ENGLISH(
+                           EnglishID NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+                           question VARCHAR2(20) NOT NULL,
+                           answer1 VARCHAR2(20) NOT NULL,
+                           answer2 VARCHAR2(20) NOT NULL,
+                           answer3 VARCHAR2(20) NOT NULL,
+                           correct VARCHAR2(20) NOT NULL,
+                           type VARCHAR2(20) NOT NULL,
+                           test VARCHAR2(20) NOT NULL,
+                           PRIMARY KEY(EnglishID)
+);
+
+
+
+CREATE TABLE TEST(
+                     TestID NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+                     test VARCHAR2(20),
+                     name VARCHAR2(20) NOT NULL,
+                     score VARCHAR2(20) NOT NULL,
+                     tipp VARCHAR2(20),
+                     dates DATE NOT NULL,
+                     PRIMARY KEY(TestID)
+);
+
+CREATE TABLE ACCOUNT(
+                        AccountID NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+                        name VARCHAR2(20) NOT NULL,
+                        password VARCHAR2(20) NOT NULL,
+                        email VARCHAR2(20) NOT NULL,
+                        PRIMARY KEY(AccountID)
+);
+CREATE TABLE RANK(
+                        rank NUMBER GENERATED ALWAYS as IDENTITY(START with 1 INCREMENT by 1),
+                        score NUMBER,
+			name VARCHAR2(20),
+                        summ NUMBER
+);
+
+
+
+
+
+

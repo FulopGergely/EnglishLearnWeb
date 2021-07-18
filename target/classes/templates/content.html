@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/menu.html}"
+      xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+    <title>index</title>
+</head>
+<body>
+
+
+
+<div layout:fragment="mainContent">
+
+
+
+
+    <div class="col-9 offset-1 text-white" >
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+        <p style="text-align: center; font-size: xxx-large;">TEST</p>
+
+
+
+
+
+
+
+
+
+
+        <!--
+
+
+
+
+
+
+                     <form name="registration" method="post" action="/submit" id="regForm">
+
+                         <div th:each="e: ${english} ">
+                             <br>
+                             <p th:text="${e.question}" >kérdés</p>
+                             <div class="custom-control custom-radio custom-control">
+                                 <input type="radio" id="radio8" value="Internet" th:name="${e.getId()}"   th:checked="${checked1}" class="custom-control-input">
+                                 <label class="custom-control-label" for="radio8" th:text="${e.answer1}" >label</label>
+                             </div>
+                             <div class="custom-control custom-radio custom-control">
+                                 <input type="radio" id="radio9" value="Ajánlott valaki" th:name="${e.getId()}"    th:checked="${checked2}" class="custom-control-input">
+                                 <label class="custom-control-label" for="radio9" th:text="${e.answer2}" >label</label>
+                             </div>
+                             <div class="custom-control custom-radio custom-control">
+                                 <input type="radio" id="radio10" value="other"  th:name="${e.getId()}"   th:checked="${checked3}" class="custom-control-input">
+                                 <label class="custom-control-label" for="radio10" th:text="${e.answer3}" >label</label>
+                             </div>
+                         </div>
+
+
+                     </form>
+
+                <button type="submit">Ok</button>
+
+                 -->
+
+        <div th:each=" e : ${english} ">
+            <br>
+            <p th:text="${e.question}" >kérdés</p>
+            <p>a. <span th:text="${e.answer1}" ></span> </p>
+            <p>b. <span th:text="${e.answer2}" ></span> </p>
+            <p>c. <span th:text="${e.answer3}" ></span> </p>
+            <br>
+        </div>
+
+
+
+
+                      <form method="post" action="/submit" id="regForm">
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="inputGroup-sizing-default">Neved:</span>
+                              <input type="text" class="form-control" name="name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                          </div>
+                          <div class="input-group mb-3">
+                              <span class="input-group-text" id="inputGroup-sizing-default">Tipp:</span>
+                              <input type="text" class="form-control" name="tipp" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                          </div>
+                          <div class="float-right">
+                              <button type="submit" class="btn btn-primary"> Ok </button>
+                          </div>
+                      </form>
+
+
+
+
+
+
+
+   <!--
+
+
+
+
+
+
+              <form name="registration" method="post" action="/submit" id="regForm">
+
+                  <p th:text="" ></p>
+                  <div class="custom-control custom-radio custom-control">
+                      <input type="radio" id="radio20" value="Internet" name="asd1" th:checked="${checked1}" class="custom-control-input">
+                      <label class="custom-control-label" for="radio20"  >label</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control">
+                      <input type="radio" id="radio21" value="Ajánlott valaki" name="asd1"  th:checked="${checked2}" class="custom-control-input">
+                      <label class="custom-control-label" for="radio21"  >label</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control">
+                      <input type="radio" id="radio22" value="other" name="asd1"  th:checked="${checked3}" class="custom-control-input">
+                      <label class="custom-control-label" for="radio22"  >label</label>
+                  </div>
+
+                  <div class="custom-control custom-radio custom-control">
+                      <input type="radio" id="radio23" value="Internet" name="asd2" th:checked="${checked1}" class="custom-control-input">
+                      <label class="custom-control-label" for="radio23"  >label</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control">
+                      <input type="radio" id="radio24" value="Ajánlott valaki" name="asd2"  th:checked="${checked2}" class="custom-control-input">
+                      <label class="custom-control-label" for="radio24"  >label</label>
+                  </div>
+                  <div class="custom-control custom-radio custom-control">
+                      <input type="radio" id="radio25" value="other" name="asd2"  th:checked="${checked3}" class="custom-control-input">
+                      <label class="custom-control-label" for="radio25"  >label</label>
+                  </div>
+              </form>
+              <button type="submit">Ok</button>
+         -->
+
+
+    </div>
+</div>
+
+
+
+
+
+
+<!--
+
+
+
+<sricpt>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (function () {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+    form.addEventListener('submit', function (event) {
+    if (!form.checkValidity()) {
+    event.preventDefault()
+    event.stopPropagation()
+    }
+
+    form.classList.add('was-validated')
+    }, false)
+    })
+    })()
+
+</sricpt>
+-->
+</body>
+</html>
+
+
+
+
+
+
+
+

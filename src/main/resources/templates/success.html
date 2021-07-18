@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/menu.html}"
+      xmlns:th="http://www.thymeleaf.org">
+
+
+
+<head>
+    <title>index</title>
+</head>
+<body>
+
+
+
+<div layout:fragment="mainContent">
+
+
+
+
+    <div class="col-9 offset-1 text-white" >
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+
+        <p style="text-align: center; font-size: xxx-large;">TEST</p>
+
+
+
+
+
+
+
+
+
+
+        <!--
+
+
+
+
+
+
+                     <form name="registration" method="post" action="/submit" id="regForm">
+
+                         <div th:each="e: ${english} ">
+                             <br>
+                             <p th:text="${e.question}" >kérdés</p>
+                             <div class="custom-control custom-radio custom-control">
+                                 <input type="radio" id="radio8" value="Internet" th:name="${e.getId()}"   th:checked="${checked1}" class="custom-control-input">
+                                 <label class="custom-control-label" for="radio8" th:text="${e.answer1}" >label</label>
+                             </div>
+                             <div class="custom-control custom-radio custom-control">
+                                 <input type="radio" id="radio9" value="Ajánlott valaki" th:name="${e.getId()}"    th:checked="${checked2}" class="custom-control-input">
+                                 <label class="custom-control-label" for="radio9" th:text="${e.answer2}" >label</label>
+                             </div>
+                             <div class="custom-control custom-radio custom-control">
+                                 <input type="radio" id="radio10" value="other"  th:name="${e.getId()}"   th:checked="${checked3}" class="custom-control-input">
+                                 <label class="custom-control-label" for="radio10" th:text="${e.answer3}" >label</label>
+                             </div>
+                         </div>
+
+
+                     </form>
+
+                <button type="submit">Ok</button>
+
+                 -->
+
+        <div th:each=" e : ${english} ">
+            <br>
+            <p th:text="${e.question}" >kérdés</p>
+            <p>a. <span th:text="${e.answer1}" ></span> </p>
+            <p>b. <span th:text="${e.answer2}" ></span> </p>
+            <p>c. <span th:text="${e.answer3}" ></span> </p>
+            <br>
+        </div>
+
+        <h1>Gratulálunk <span th:text="${currentTest.name}" ></span></h1>
+        <p> Helyesen leadott válaszaid: <span th:text="${currentCorrect}" ></span> </p>
+        <p> Ennyi pontot szereztél: <span th:text="${currentTest.score}" ></span> </p>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,6 @@
+Követelmények:
+
+1. Kérdés felévetel 
+2. válasz felvétele
+3. tippelés
+4. eredmény megjelenítése
